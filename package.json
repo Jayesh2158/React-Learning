@@ -1,0 +1,22 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "This is just for learning.",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Jayesh2158/React-Learning.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "jayesh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jayesh2158/React-Learning/issues"
+  },
+  "homepage": "https://github.com/Jayesh2158/React-Learning#readme"
+}

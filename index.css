@@ -50,7 +50,36 @@
     flex-wrap: wrap;
 }
 
-.filter-btn {
-    margin: 10px;
+.filter-btn:hover {
+    cursor: pointer;
+}
+
+.shimmer-card {
+    width: 300px;
+    height: 450px;
+    margin: 5px;
+    padding: 5px;
+    background-color: #dadada;
+}
+
+.shimmer-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.login-btn:hover {
+    cursor: pointer;
+}
+
+.filter {
+    display: flex;
+    padding: 10px;
+}
+
+.search-container {
+    padding-right: 10px;
+}
+
+.search-container>button {
     cursor: pointer;
 }

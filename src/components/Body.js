@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import cardList from "../utils/mockData";
 import Shimmer from "./Shimmer";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Body = () => {
     const [restaurantList, setrestaurantList] = useState([]);
@@ -19,9 +20,7 @@ const Body = () => {
 
         const jsonData = await res.json();
 
-        console.log(jsonData?.data?.cards);
-
-        if (jsonData?.data?.cards.length === 0) {
+        if (!jsonData?.data?.cards || jsonData?.data?.cards.length < 1) {
             setrestaurantList(cardList);
             setfilteredList(cardList);
         } else {
@@ -74,10 +73,12 @@ const Body = () => {
             </div>
             <div className="res-container">
                 {filteredList.map((restaurant) => (
-                    <RestaurantCard
+                    <Link
                         key={restaurant.data.data.id}
-                        cardData={restaurant.data.data}
-                    />
+                        to={"/restaurants/" + restaurant.data.data.id}
+                    >
+                        <RestaurantCard cardData={restaurant.data.data} />
+                    </Link>
                 ))}
             </div>
         </div>

@@ -8,7 +8,8 @@ class UserClass extends React.Component {
             userInfo: {
                 name: "Null",
                 location: "Null",
-                avatar_url: "Null"
+                avatar_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSez5Hhwz8qtjcctv1WFL6Td8NVdHUtSw12hw&usqp=CAU",
+                bio: "Null"
             }
         };
     }
@@ -20,13 +21,13 @@ class UserClass extends React.Component {
     }
 
     render() {
-        const { name, location, avatar_url } = this.state.userInfo;
+        const { name, location, avatar_url, bio } = this.state.userInfo;
         return (
             <div className="user-card">
                 <img src={avatar_url} />
                 <h3>Name: {name}</h3>
                 <h4>Location: {location}</h4>
-                <h5>Contact: test@gmail.com</h5>
+                <h5>Bio: {bio}</h5>
             </div>
         )
     }

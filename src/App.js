@@ -10,7 +10,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 const AppLayout = () => {
     return (
-        <div className="app">
+        <div className="app font-sans">
             <Header />
             <Outlet />
         </div>

@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body .verloop-livechat-logo {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs-Zx8jlCcs4vkT9pdzXWlOBlaFrTb_L_6MA&usqp=CAU);
+    background-size: 70px 70px;
+    border-radius: 50%;
+    mix-blend-mode: multiply !important;
+}

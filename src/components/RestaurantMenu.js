@@ -35,15 +35,15 @@ const RestaurantMenu = () => {
     }
 
     return (
-        <div className="menu">
-            <h1>{name}</h1>
-            <p>
+        <div className="menu m-10">
+            <h1 className="text-5xl text-green-700">{name}</h1>
+            <p className="text-3xl text-green-700">
                 {cuisines.join(", ")} - {costForTwoMessage}
             </p>
-            <h2>Menu</h2>
-            <ul>
+            <h2 className="text-4xl pt-10 text-green-700">Menu</h2>
+            <ul className="px-10 text-2xl py-5">
                 {itemCards.map((item) => (
-                    <li key={item.card.info.id}>
+                    <li key={item.card.info.id} className="m-1">
                         {item.card.info.name} - {item.card.info.price === 40400 ? "" : " Rs. "}
                         {item.card.info.price / 100 || item.card.info.defaultPrice / 100}
                     </li>

@@ -21,7 +21,7 @@ const Body = () => {
 
         const jsonData = await res.json();
 
-        if (!jsonData?.data?.cards || jsonData?.data?.cards.length < 1) {
+        if (true) {
             setrestaurantList(cardList);
             setfilteredList(cardList);
         } else {
@@ -45,18 +45,18 @@ const Body = () => {
 
     return (
         <div className="body">
-            <div className="filter">
+            <div className="flex items-center  pl-4">
                 <div className="search-container">
                     <input
                         type="text"
-                        className="search-box"
+                        className="border border-solid border-black"
                         value={searchItem}
                         onChange={(e) => {
                             setSearchItem(e.target.value);
                         }}
                     />
                     <button
-                        className="search-btn"
+                        className="px-4 py-2 bg-green-300 m-4 rounded-lg"
                         onClick={() => {
                             const searchData = restaurantList.filter((res) =>
                                 res.data.data.name
@@ -69,19 +69,21 @@ const Body = () => {
                         Search
                     </button>
                 </div>
-                <button
-                    className="filter-btn"
-                    onClick={() => {
-                        const topRatesRes = restaurantList.filter(
-                            (res) => res.data.data.avgRating > 4.1
-                        );
-                        setfilteredList(topRatesRes);
-                    }}
-                >
-                    Top Rated Restaurant
-                </button>
+                <dev className="search flex items-center">
+                    <button
+                        className="px-4 py-2 bg-gray-100 rounded-lg"
+                        onClick={() => {
+                            const topRatesRes = restaurantList.filter(
+                                (res) => res.data.data.avgRating > 4.1
+                            );
+                            setfilteredList(topRatesRes);
+                        }}
+                    >
+                        Top Rated Restaurant
+                    </button>
+                </dev>
             </div>
-            <div className="res-container">
+            <div className="flex flex-wrap">
                 {filteredList.map((restaurant) => (
                     <Link
                         key={restaurant.data.data.id}

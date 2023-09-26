@@ -1,14 +1,17 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromatedRestaurantCard } from "./RestaurantCard";
 import cardList from "../utils/mockData";
 import Shimmer from "./Shimmer";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
     const [restaurantList, setrestaurantList] = useState([]);
     const [filteredList, setfilteredList] = useState([]);
     const [searchItem, setSearchItem] = useState("");
+
+    const WithPromatedRestaurantCard = withPromatedRestaurantCard(RestaurantCard)
 
     useEffect(() => {
         fetchData();
@@ -43,6 +46,8 @@ const Body = () => {
         return <Shimmer />;
     }
 
+    const { loggedInUser, setUserName } = useContext(UserContext);
+
     return (
         <div className="body">
             <div className="flex items-center  pl-4">
@@ -69,6 +74,14 @@ const Body = () => {
                         Search
                     </button>
                 </div>
+                <div className="search m-4 p-4 flex items-center">
+                    <label>UserName : </label>
+                    <input
+                        className="border border-black p-2"
+                        value={loggedInUser}
+                        onChange={(e) => setUserName(e.target.value)}
+                    />
+                </div>
                 <dev className="search flex items-center">
                     <button
                         className="px-4 py-2 bg-gray-100 rounded-lg"
@@ -89,7 +102,7 @@ const Body = () => {
                         key={restaurant.data.data.id}
                         to={"/restaurants/" + restaurant.data.data.id}
                     >
-                        <RestaurantCard cardData={restaurant.data.data} />
+                        {restaurant.data.data.promoted ? <WithPromatedRestaurantCard cardData={restaurant.data.data} /> : <RestaurantCard cardData={restaurant.data.data} />}
                     </Link>
                 ))}
             </div>

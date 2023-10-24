@@ -13,7 +13,7 @@ const Header = () => {
 
     // Subscribing to the store using a Selector
     const cartItems = useSelector((store) => store.cart.items);
-    console.log(cartItems);
+    // console.log(cartItems);
 
     return (
         <div className="flex justify-between shadow-lg lg:bg-green-50">
@@ -48,12 +48,6 @@ const Header = () => {
                         loginBtn === "Login"
                             ? setLoginBtn("Logout")
                             : setLoginBtn("Login");
-
-                        var val = Math.floor(1000 + Math.random() * 9000);
-                        Verloop(function () {
-                            this.setUserId(val.toString())
-                            this.logout();
-                        });
                     }}>
                         {loginBtn}
                     </button>

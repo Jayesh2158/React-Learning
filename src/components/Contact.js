@@ -2,9 +2,23 @@ const Contact = () => {
     return (
         <div className="m-10">
             <h1 className="text-4xl text-green-700">Contact Us</h1>
-            <h2 className="text-2xl text-green-700">Somthing will be here soon.</h2>
+            <form>
+                <input
+                    type="text"
+                    className=" border border-black p-2 m-2"
+                    placeholder="name"
+                />
+                <input
+                    type="text"
+                    className=" border border-black p-2 m-2"
+                    placeholder="message"
+                />
+                <button className=" border border-black p-2 m-2 bg-gray-100 rounded-lg">
+                    Submit
+                </button>
+            </form>
         </div>
-    )
-}
+    );
+};
 
 export default Contact;
